@@ -1,167 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Rizvan Primadita | Fullstack Developer</title>
+
+<!-- ===== Plausible Analytics ===== -->
+<script defer data-domain="rizvan.my.id" src="https://plausible.io/js/script.js"></script>
 
 <style>
 :root {
-    --primary: #2A9D8F;
-    --primary-light: #55B6A9;
-    --primary-dark: #1F726B;
-    --dark: #264653;
-    --accent: #E9C46A;
-    --bg: #F4F6F8;
-    --text: #333;
-    --card: #fff;
+  --primary:#2A9D8F;
+  --primary-dark:#1F726B;
+  --accent:#E9C46A;
+  --bg:#F4F6F8;
+  --card:#ffffff;
+  --text:#1f2937;
 }
-
 [data-theme="dark"] {
-    --bg: #0f172a;
-    --text: #e5e7eb;
-    --card: #1e293b;
+  --bg:#0f172a;
+  --card:#1e293b;
+  --text:#e5e7eb;
 }
-
-body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Segoe UI,Tahoma,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
 }
-
-header {
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    color: #fff;
-    padding: 60px 20px;
+header{
+  background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+  color:#fff;
+  padding:60px 20px;
 }
-
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 40px 20px;
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:40px 20px;
 }
-
-header h1 {
-    margin: 0;
-    font-size: 38px;
+h1{margin:0;font-size:38px}
+h2{color:var(--primary);margin-top:0}
+section{
+  background:var(--card);
+  margin-bottom:30px;
+  padding:30px;
+  border-radius:10px;
+  border-left:6px solid var(--primary);
 }
-
-header p {
-    margin-top: 10px;
-    font-size: 18px;
+.controls button{
+  margin-top:15px;
+  margin-right:10px;
+  padding:8px 14px;
+  border:none;
+  border-radius:20px;
+  font-weight:600;
+  cursor:pointer;
+  background:var(--accent);
 }
-
-.controls {
-    margin-top: 20px;
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
 }
-
-button {
-    background: var(--accent);
-    border: none;
-    padding: 8px 14px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: 600;
-    margin-right: 10px;
+.job h3{margin-bottom:5px}
+.job span{font-size:14px;color:#94a3b8}
+footer{
+  background:#264653;
+  color:#cbd5e1;
+  text-align:center;
+  padding:25px;
 }
-
-section {
-    background: var(--card);
-    margin-bottom: 30px;
-    padding: 30px;
-    border-radius: 10px;
-    border-left: 6px solid var(--primary);
-}
-
-h2 {
-    margin-top: 0;
-    color: var(--primary);
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.job h3 {
-    margin-bottom: 5px;
-}
-
-.job span {
-    font-size: 14px;
-    color: #94a3b8;
-}
-
-footer {
-    background: var(--dark);
-    color: #cbd5e1;
-    text-align: center;
-    padding: 25px;
-    font-size: 14px;
-}
-
-a {
-    color: var(--primary);
-    font-weight: 600;
-    text-decoration: none;
-}
+a{color:var(--primary);font-weight:600;text-decoration:none}
 </style>
 </head>
 
 <body>
 
 <header>
-<div class="container">
-<h1>Rizvan Primadita</h1>
-<p id="headline"></p>
+  <div class="container">
+    <h1>Rizvan Primadita</h1>
+    <p id="headline"></p>
 
-<div class="controls">
-<button onclick="toggleLang()">EN / ID</button>
-<button onclick="toggleTheme()">🌙 Dark Mode</button>
-</div>
-</div>
+    <div class="controls">
+      <button onclick="toggleLang()">EN / ID</button>
+      <button onclick="toggleTheme()">🌙 Dark Mode</button>
+    </div>
+  </div>
 </header>
 
 <div class="container">
 
 <section>
-<h2 id="summaryTitle"></h2>
-<p id="summaryText"></p>
+  <h2 id="summaryTitle"></h2>
+  <p id="summaryText"></p>
 </section>
 
 <section>
-<h2 id="contactTitle"></h2>
-<div class="grid">
-<div>📍 Bandung, West Java</div>
-<div>📞 <span id="phone"></span></div>
-<div>✉️ <span id="email"></span></div>
-<div>🔗 <a href="https://linkedin.com/in/r12van" target="_blank">LinkedIn</a></div>
-</div>
+  <h2 id="contactTitle"></h2>
+  <div class="grid">
+    <div>📍 Bandung, West Java</div>
+    <div>📞 <span id="phone"></span></div>
+    <div>✉️ <span id="email"></span></div>
+    <div>
+      🔗 
+      <a href="https://linkedin.com/in/r12van"
+         target="_blank"
+         data-plausible-event="Click LinkedIn">
+         LinkedIn
+      </a>
+    </div>
+  </div>
 </section>
 
 <section>
-<h2 id="expTitle"></h2>
+  <h2 id="expTitle"></h2>
 
-<div class="job">
-<h3 id="job1"></h3>
-<span>DKI Jakarta Fire & Rescue Agency | 2023 – Present</span>
-<ul id="job1Desc"></ul>
-</div>
+  <div class="job">
+    <h3 id="job1"></h3>
+    <span>DKI Jakarta Fire & Rescue Agency | 2023 – Present</span>
+    <ul id="job1Desc"></ul>
+  </div>
 
-<div class="job">
-<h3 id="job2"></h3>
-<span>PT Aering | 2015 – 2023</span>
-<ul id="job2Desc"></ul>
-</div>
-
+  <div class="job">
+    <h3 id="job2"></h3>
+    <span>PT Aering | 2015 – 2023</span>
+    <ul id="job2Desc"></ul>
+  </div>
 </section>
 
 <section>
-<h2 id="eduTitle"></h2>
-<p id="eduText"></p>
+  <h2 id="eduTitle"></h2>
+  <p id="eduText"></p>
+</section>
+
+<section>
+  <h2>CV PDF</h2>
+  <a href="rizvan-primadita-cv.pdf"
+     download
+     data-plausible-event="Download CV">
+     📄 Download CV (PDF)
+  </a>
 </section>
 
 </div>
@@ -171,101 +151,95 @@ a {
 </footer>
 
 <script>
-// ===== LANGUAGE CONTENT =====
-let lang = "en";
-
-const content = {
-en: {
-headline: "Fullstack Developer | Web Application Engineer",
-summaryTitle: "Professional Summary",
-summaryText: "Fullstack Developer with 10+ years of experience in building scalable web applications, backend systems, and deploying production-ready solutions using Laravel and Linux servers.",
-contactTitle: "Contact",
-expTitle: "Work Experience",
-job1: "IT Expert Web Developer & DevOps",
-job1Desc: [
+/* ===== LANGUAGE CONTENT ===== */
+let lang="en";
+const content={
+en:{
+headline:"Fullstack Developer | Web Application Engineer",
+summaryTitle:"Professional Summary",
+summaryText:"Fullstack Developer with 10+ years of experience building scalable web applications, backend systems, and production deployments using Laravel and Linux servers.",
+contactTitle:"Contact",
+expTitle:"Work Experience",
+job1:"IT Expert Web Developer & DevOps",
+job1Desc:[
 "Developed enterprise web applications using Laravel",
-"Implemented SSO and role-based access control",
+"Implemented Single Sign-On (SSO) & role-based access",
 "Handled deployment and server optimization"
 ],
-job2: "Software Engineer & Network Engineer",
-job2Desc: [
+job2:"Software Engineer & Network Engineer",
+job2Desc:[
 "Built Flight Data Analysis web application",
-"Designed relational databases for reporting",
+"Designed relational databases for analytics",
 "Managed Linux servers and VPN infrastructure"
 ],
-eduTitle: "Education",
-eduText: "Bachelor of Informatics Engineering – Universitas Langlangbuana (GPA 3.36)"
+eduTitle:"Education",
+eduText:"Bachelor of Informatics Engineering – Universitas Langlangbuana (GPA 3.36)"
 },
-id: {
-headline: "Fullstack Developer | Pengembang Aplikasi Web",
-summaryTitle: "Ringkasan Profil",
-summaryText: "Fullstack Developer dengan pengalaman lebih dari 10 tahun dalam membangun aplikasi web, sistem backend, serta deployment sistem produksi menggunakan Laravel dan server Linux.",
-contactTitle: "Kontak",
-expTitle: "Pengalaman Kerja",
-job1: "IT Expert Web Developer & DevOps",
-job1Desc: [
+id:{
+headline:"Fullstack Developer | Pengembang Aplikasi Web",
+summaryTitle:"Ringkasan Profil",
+summaryText:"Fullstack Developer dengan pengalaman lebih dari 10 tahun dalam membangun aplikasi web, sistem backend, serta deployment sistem produksi menggunakan Laravel dan Linux.",
+contactTitle:"Kontak",
+expTitle:"Pengalaman Kerja",
+job1:"IT Expert Web Developer & DevOps",
+job1Desc:[
 "Mengembangkan aplikasi web skala enterprise menggunakan Laravel",
-"Menerapkan sistem SSO dan hak akses berbasis role",
+"Menerapkan SSO dan manajemen hak akses",
 "Menangani deployment dan optimasi server"
 ],
-job2: "Software Engineer & Network Engineer",
-job2Desc: [
-"Mengembangkan aplikasi Flight Data Analysis berbasis web",
-"Merancang database relasional untuk kebutuhan analisis",
+job2:"Software Engineer & Network Engineer",
+job2Desc:[
+"Mengembangkan aplikasi Flight Data Analysis",
+"Merancang database untuk kebutuhan analisis",
 "Mengelola server Linux dan infrastruktur VPN"
 ],
-eduTitle: "Pendidikan",
-eduText: "S1 Teknik Informatika – Universitas Langlangbuana (IPK 3.36)"
+eduTitle:"Pendidikan",
+eduText:"S1 Teknik Informatika – Universitas Langlangbuana (IPK 3.36)"
 }
 };
 
-// ===== FUNCTIONS =====
-function render() {
-const c = content[lang];
-document.getElementById("headline").innerText = c.headline;
-document.getElementById("summaryTitle").innerText = c.summaryTitle;
-document.getElementById("summaryText").innerText = c.summaryText;
-document.getElementById("contactTitle").innerText = c.contactTitle;
-document.getElementById("expTitle").innerText = c.expTitle;
-document.getElementById("job1").innerText = c.job1;
-document.getElementById("job2").innerText = c.job2;
-document.getElementById("eduTitle").innerText = c.eduTitle;
-document.getElementById("eduText").innerText = c.eduText;
+/* ===== RENDER ===== */
+function render(){
+const c=content[lang];
+headline.innerText=c.headline;
+summaryTitle.innerText=c.summaryTitle;
+summaryText.innerText=c.summaryText;
+contactTitle.innerText=c.contactTitle;
+expTitle.innerText=c.expTitle;
+job1.innerText=c.job1;
+job2.innerText=c.job2;
+eduTitle.innerText=c.eduTitle;
+eduText.innerText=c.eduText;
 
-const job1List = document.getElementById("job1Desc");
-const job2List = document.getElementById("job2Desc");
-job1List.innerHTML = "";
-job2List.innerHTML = "";
-
-c.job1Desc.forEach(i => job1List.innerHTML += `<li>${i}</li>`);
-c.job2Desc.forEach(i => job2List.innerHTML += `<li>${i}</li>`);
+job1Desc.innerHTML="";
+job2Desc.innerHTML="";
+c.job1Desc.forEach(i=>job1Desc.innerHTML+=`<li>${i}</li>`);
+c.job2Desc.forEach(i=>job2Desc.innerHTML+=`<li>${i}</li>`);
 }
 
-function toggleLang() {
-lang = lang === "en" ? "id" : "en";
-render();
+/* ===== TOGGLES ===== */
+function toggleLang(){
+  lang = lang==="en" ? "id" : "en";
+  render();
+  plausible("Switch Language",{props:{lang}});
+}
+function toggleTheme(){
+  const t=document.documentElement.getAttribute("data-theme");
+  const nt=t==="dark"?"light":"dark";
+  document.documentElement.setAttribute("data-theme",nt);
+  localStorage.setItem("theme",nt);
+  plausible("Toggle Dark Mode",{props:{mode:nt}});
 }
 
-function toggleTheme() {
-const t = document.documentElement.getAttribute("data-theme");
-document.documentElement.setAttribute("data-theme", t === "dark" ? "light" : "dark");
-localStorage.setItem("theme", document.documentElement.getAttribute("data-theme"));
-}
+/* ===== ANTI-SPAM CONTACT ===== */
+phone.innerText="0856 5911 6766";
+email.innerHTML='<span style="cursor:pointer" data-plausible-event="View Email">rizvanprimadita [at] gmail [dot] com</span>';
+email.addEventListener("click",()=>plausible("Click Email"));
 
-// ===== ANTI SPAM CONTACT =====
-document.getElementById("email").innerText = ["rizvanprimadita","gmail.com"].join("@");
-document.getElementById("phone").innerText = "0856 5911 6766";
-
-// INIT
-document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "light");
+/* ===== INIT ===== */
+document.documentElement.setAttribute("data-theme",localStorage.getItem("theme")||"light");
 render();
 </script>
-<!-- Privacy-friendly analytics by Plausible -->
-<script async src="https://plausible.io/js/pa-q7laKhZcNoXEUgsDUzWSA.js"></script>
-<script>
-  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-  plausible.init()
-</script>
-    
+
 </body>
 </html>
